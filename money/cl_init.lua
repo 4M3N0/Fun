@@ -21,10 +21,9 @@ hook.Add("HUDPaint", "DrawMoneyAtCrosshair", function()
     end
 
     if IsValid(lastEntity) then
-        -- Get the money amount from the entity
         local moneyAmount = lastEntity:GetNWInt("MoneyAmount", 0)
         local scrW, scrH = ScrW(), ScrH()
-        local x, y = scrW / 2, scrH / 2  -- Center of the screen
+        local x, y = scrW / 2, scrH / 2 
 		local offset = 20
         draw.SimpleTextOutlined("$" .. moneyAmount, "ChatFont", x, y - offset, Color(0, 255, 0), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, Color(0, 0, 0))
     end
